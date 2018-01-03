@@ -1,7 +1,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
  
   <!-- Import MSBuildExtensionsPack -->
-  <Import Project="..\..\..\.nuget\packages\MSBuild.Extension.Pack\1.9.1\build\net40\MSBuild.Extension.Pack.targets"/>
+  <Import Project="C:\nuget\packages\MSBuild.Extension.Pack\1.9.1\build\net40\MSBuild.Extension.Pack.targets"/>
   <!--<Import Project="$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks"/>-->
   
   <!-- Names of all projects -->
