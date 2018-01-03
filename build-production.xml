@@ -65,7 +65,7 @@
       <Output TaskParameter="Include" ItemName="TestAssembly" />  
     </CreateItem>
     <PropertyGroup>
-      <NUNitOptions>--output "$(OutputDir)\TestResult.xml"</NUNitOptions>
+      <!--<NUNitOptions>--output "$(OutputDir)\TestResult.xml"</NUNitOptions>-->
       <NUNitCommand>$(NUnitConsole) $(NUNitOptions) "@(TestAssembly)"</NUNitCommand>
     </PropertyGroup>
     
