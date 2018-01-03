@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="MvcTestDeployApp" />
+  <setParameter name="MvcTestDeployAppContext-Web.config Connection String" value="Data Source=SQLSVR2016-04;Initial Catalog=MvcTestDeployApp;Integrated Security=True" />
+  <setParameter name="MvcTestDeployAppContext_DatabasePublish-Web.config Connection String" value="Data Source=SQLSVR2016-04;Initial Catalog=MvcTestDeployApp;Integrated Security=True" />
+</parameters>
