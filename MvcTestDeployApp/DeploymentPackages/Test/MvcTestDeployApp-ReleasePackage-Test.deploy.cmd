@@ -7,6 +7,7 @@
 @rem ---------------------------------------------------------------------------------
 @if %_echo%!==! echo off
 setlocal
+%@Try%
 @rem ---------------------------------------------------------------------------------
 @rem Please Make sure you have Web Deploy install in your machine. 
 @rem Alternatively, you can explicit set the MsDeployPath to the location it is on your machine
@@ -28,7 +29,6 @@ set MSDeployPath=%%j
 @rem ------------------------------------------
 
 @rem ------------------------------------------
-
                       
 if not exist "%MSDeployPath%msdeploy.exe" (
 echo. msdeploy.exe is not found on this machine. Please install Web Deploy before execute the script. 
@@ -120,7 +120,6 @@ if not %_ArgtempAgentWithQuote% == "" set _Destination=%_Destination%,tempAgent=
 @rem ------------------------------------------
 
 @rem ------------------------------------------
-
                       
 @rem ---------------------------------------------------------------------------------
 @rem add -whatif when -T is specified                      
@@ -181,7 +180,7 @@ set _MSDeployCommandline="%MSDeployPath%msdeploy.exe" -source:package='%RootPath
 ) else (
 set _MSDeployCommandline="%MSDeployPath%msdeploy.exe" -source:package='%RootPath%MvcTestDeployApp-ReleasePackage-Test.zip' -dest:%_Destination% -verb:sync -disableLink:AppPoolExtension -disableLink:ContentExtension -disableLink:CertificateExtension -skip:objectname='dirPath',absolutepath='obj\\Release\\Package\\PackageTmp\\App_Data$' -skip:objectname='dirPath',absolutepath='MvcTestDeployApp\\App_Data$' -setParamFile:"%_DeploySetParametersFile%"
 )
-
+pause
 if "%_HaveArgMSDeployAdditonalFlags%" == "" (
 goto :MSDeployWithOutArgMsDeployAdditionalFlag
 ) 
@@ -281,6 +280,8 @@ goto :eof
 @rem ---------------------------------------------------------------------------------
 @rem Usage
 @rem ---------------------------------------------------------------------------------
+%@EndTry%
+:@Catch
 :usage
 echo =========================================================
 if not exist "%RootPath%MvcTestDeployApp-ReleasePackage-Test.deploy-readme.txt" (
