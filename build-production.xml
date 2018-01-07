@@ -9,7 +9,7 @@
     <MvcTestDeployApp>MvcTestDeployApp</MvcTestDeployApp>
     <MvcTestDeployAppTests>MvcTestDeployApp.Tests</MvcTestDeployAppTests>
     <Configuration Condition="$(Configuration) == ''">Release</Configuration>
-      <PublishProfile Condition="$(PublishProfile) == ''">Test</PublishProfile>
+      <PublishProfile Condition="$(PublishProfile) == ''">Production</PublishProfile>
     <OutputDir>MvcTestDeployApp\DeploymentPackages\Production</OutputDir>
     <NUnitConsole>"C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe"</NUnitConsole>
   </PropertyGroup>
@@ -65,7 +65,7 @@
       <Output TaskParameter="Include" ItemName="TestAssembly" />  
     </CreateItem>
     <PropertyGroup>
-      <!--<NUNitOptions>--output "$(OutputDir)\TestResult.xml"</NUNitOptions>-->
+      <NUNitOptions>--output "$(OutputDir)\TestResult.xml"</NUNitOptions>
       <NUNitCommand>$(NUnitConsole) $(NUNitOptions) "@(TestAssembly)"</NUNitCommand>
     </PropertyGroup>
     
