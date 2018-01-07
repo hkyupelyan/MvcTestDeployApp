@@ -206,6 +206,7 @@
     <Content Include="Views\Things\Details.cshtml" />
     <Content Include="Views\Things\Edit.cshtml" />
     <Content Include="Views\Things\Index.cshtml" />
+    <None Include="Web.Develop.config" />
     <None Include="Web.Production.config" />
     <None Include="Web.Test.config" />
   </ItemGroup>
