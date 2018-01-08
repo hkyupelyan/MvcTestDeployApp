@@ -7,6 +7,7 @@ namespace MvcTestDeployApp.Models
 {
     /// <summary>
     /// just added a comment to see if polling will trigger with commit
+    /// this should work
     /// </summary>
     public class Thing
     {
