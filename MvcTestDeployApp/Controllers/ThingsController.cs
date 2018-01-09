@@ -46,7 +46,7 @@ namespace MvcTestDeployApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ThingId,Name")] Thing thing)
+        public ActionResult Create([Bind(Include = "ThingId,Name,Description")] Thing thing)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace MvcTestDeployApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ThingId,Name")] Thing thing)
+        public ActionResult Edit([Bind(Include = "ThingId,Name,Description")] Thing thing)
         {
             if (ModelState.IsValid)
             {
