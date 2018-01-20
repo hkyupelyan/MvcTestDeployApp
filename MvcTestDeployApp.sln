@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTestDeployApp", "MvcTestDeployApp\MvcTestDeployApp.csproj", "{D639DBA1-74BD-42EA-A192-242F0B0C1C15}"
 EndProject
@@ -9,8 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcTestDeployApp.Tests", "M
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44F0A60A-8661-4E30-95B3-23F8BCACEDBD}"
 	ProjectSection(SolutionItems) = preProject
+		build-development-bamboo.xml = build-development-bamboo.xml
 		build-development.xml = build-development.xml
+		build-production-bamboo.xml = build-production-bamboo.xml
 		build-production.xml = build-production.xml
+		build-test-bamboo.xml = build-test-bamboo.xml
 		build-test.xml = build-test.xml
 	EndProjectSection
 EndProject
