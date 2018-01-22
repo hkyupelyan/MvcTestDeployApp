@@ -10,8 +10,8 @@
     <MvcTestDeployAppTests>MvcTestDeployApp.Tests</MvcTestDeployAppTests>
     <Configuration Condition="$(Configuration) == ''">Release</Configuration>
       <PublishProfile Condition="$(PublishProfile) == ''">Production</PublishProfile>
-    <OutputDir>MvcTestDeployApp\DeploymentPackages\Production\${bamboo.shortPlanKey}\${bamboo.buildNumber}</OutputDir>
-    <NUnitConsole>"C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe"</NUnitConsole>
+    <OutputDir>MvcTestDeployApp\DeploymentPackages\Production</OutputDir>
+    <!--<NUnitConsole>"C:\Program Files (x86)\NUnit.org\nunit-console\nunit3-console.exe"</NUnitConsole>-->
   </PropertyGroup>
  
   <ItemGroup>
@@ -64,14 +64,16 @@
     <CreateItem Include="$(CurrentProject)\bin\$(Configuration)\$(CurrentProject).dll">  
       <Output TaskParameter="Include" ItemName="TestAssembly" />  
     </CreateItem>
+    <!--
     <PropertyGroup>
-      <NUNitOptions>--output "$(OutputDir)\TestResult.xml"</NUNitOptions>
+      <NUNitOptions>output "$(OutputDir)\TestResult.xml"</NUNitOptions>
       <NUNitCommand>$(NUnitConsole) $(NUNitOptions) "@(TestAssembly)"</NUNitCommand>
     </PropertyGroup>
     
     <Exec Command="$(NUnitCommand)">
       <Output TaskParameter="ExitCode" ItemName="ExitCodes" />
     </Exec>
+    -->
   </Target>
   
   <Target Name="Package" DependsOnTargets="Test">
