@@ -1,0 +1,58 @@
+﻿@model MvcTestDeployApp.Models.MVCGridToolbarModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MVCGridToolbarModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MVCGridName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVCGridName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageSize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageSize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ColumnVisibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColumnVisibility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Export)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Export)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GlobalSearch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GlobalSearch)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MVCGridToolbarModelId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

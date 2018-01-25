@@ -20,5 +20,9 @@ namespace MvcTestDeployApp.Models
         }
 
         public System.Data.Entity.DbSet<MvcTestDeployApp.Models.Thing> Things { get; set; }
+
+        public System.Data.Entity.DbSet<MvcTestDeployApp.Models.MVCGridToolbarModel> MVCGridToolbarModels { get; set; }
+
+        public System.Data.Entity.DbSet<MvcTestDeployApp.Models.Employee> Employees { get; set; }
     }
 }

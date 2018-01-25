@@ -56,6 +56,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MVCGrid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MVCGrid.Net.1.0.0.61\lib\net40\MVCGrid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -109,6 +112,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -147,8 +153,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MVCGridConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MVCGridToolbarModelsController.cs" />
     <Compile Include="Controllers\ThingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -161,10 +170,17 @@
     <Compile Include="Migrations\201801090256020_ThingDescription.Designer.cs">
       <DependentUpon>201801090256020_ThingDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801250426324_Employee.cs" />
+    <Compile Include="Migrations\201801250426324_Employee.Designer.cs">
+      <DependentUpon>201801250426324_Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\MVCGridToolbarModel.cs" />
     <Compile Include="Models\MvcTestDeployAppContext.cs" />
     <Compile Include="Models\Thing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\EmployeeMVCGridToolbarModelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -192,14 +208,18 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -211,6 +231,18 @@
     <Content Include="Views\Things\Details.cshtml" />
     <Content Include="Views\Things\Edit.cshtml" />
     <Content Include="Views\Things\Index.cshtml" />
+    <Content Include="Views\MVCGridToolbarModels\Create.cshtml" />
+    <Content Include="Views\MVCGridToolbarModels\Delete.cshtml" />
+    <Content Include="Views\MVCGridToolbarModels\Details.cshtml" />
+    <Content Include="Views\MVCGridToolbarModels\Edit.cshtml" />
+    <Content Include="Views\MVCGridToolbarModels\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Shared\MVCGridToolbar.cshtml" />
+    <Content Include="Views\Employees\Index-old.cshtml" />
     <None Include="Web.Develop.config" />
     <None Include="Web.Production.config" />
     <None Include="Web.Test.config" />
@@ -238,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801090256020_ThingDescription.resx">
       <DependentUpon>201801090256020_ThingDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801250426324_Employee.resx">
+      <DependentUpon>201801250426324_Employee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

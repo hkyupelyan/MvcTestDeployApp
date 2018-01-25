@@ -1,0 +1,20 @@
+﻿@model IEnumerable<MvcTestDeployApp.Models.Employee>
+@{
+    ViewBag.Title = "Employee Home";
+}
+
+<h2>Employee Home</h2>
+
+<p>
+    @Html.ActionLink("Create New Employee", "Create")
+</p>
+
+@Html.Partial("MVCGridToolbar", new MvcTestDeployApp.Models.MVCGridToolbarModel()
+{
+    MVCGridName = "EmployeeGrid",
+    PageSize = true,
+    ColumnVisibility = true,
+    Export = true,
+    GlobalSearch = true
+})
+@Html.MVCGrid("EmployeeGrid")
